@@ -5,6 +5,11 @@
 </h1>
 <p align="center">🚀 MOM são sistemas que permitem o envio de mensagens entre entidades de um sistema distribuído </p>
 
+
+[![Generic badge](https://img.shields.io/github/issues/PUC-ES-LDAMD/bovespa-rabbitmq-matheus-raissa)](https://shields.io/)
+[![lastcommit](https://img.shields.io/github/last-commit/PUC-ES-LDAMD/bovespa-rabbitmq-matheus-raissa)](https://shields.io/)
+[![best_language](https://img.shields.io/github/languages/top/PUC-ES-LDAMD/bovespa-rabbitmq-matheus-raissa)](https://shields.io/)
+
 ### 💻 Alunos
 
 * Matheus Santos Rosa Carneiro - [mcarneirobug](https://github.com/mcarneirobug)
