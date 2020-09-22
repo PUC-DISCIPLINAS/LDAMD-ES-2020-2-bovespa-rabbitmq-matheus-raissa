@@ -27,6 +27,7 @@ O projeto proposto a ser desenvolvido é um sistema para uma bolsa de valores, c
 
 > O diagrama de componentes apresenta os diferentes componentes de um sistema, além de possíveis dependências entre tais elementos.
 
+![component_diagram](https://user-images.githubusercontent.com/30940498/93944897-39d64500-fd0c-11ea-830d-9eabbba753e8.png)
 
 ### 💡 Diagrama de Sequência
 
