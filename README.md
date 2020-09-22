@@ -47,8 +47,8 @@ O projeto proposto a ser desenvolvido é um sistema para uma bolsa de valores, c
 ### 🛠 Tecnologias
 
 <h1 align="center"> 	
-<a href="https://www.java.com/pt_BR/"><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/rabbitmq.svg" /></a> 
-<a href="https://www.rabbitmq.com/"><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/java.svg" /></a> 
+<a href="https://www.rabbitmq.com/"><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/rabbitmq.svg" /></a> 
+<a href="https://www.java.com/pt_BR/"><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/java.svg" /></a> 
 </h1>
 
 ### ✋🏻 Dependências
