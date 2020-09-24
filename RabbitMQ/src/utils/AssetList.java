@@ -6,28 +6,28 @@ import java.util.Vector;
 
 public class AssetList {
 
-	//realiza leitura do arquivo de acoes da bovespa
-    @SuppressWarnings("deprecation")
-    public static Vector<String> load() {
+	//realiza leitura do arquivo de acoes da v
+	@SuppressWarnings("deprecation")
+	public static Vector<String> load() {
 
-        Vector<String> assetsCodes = new Vector<String>();
+		Vector<String> assetsCodes = new Vector<String>();
 
-        try {
-            FileInputStream file = new FileInputStream("acoes_bovespa.csv");
-            DataInputStream data = new DataInputStream(file);
+		try {
+			FileInputStream file = new FileInputStream("acoes_bovespa.csv");
+			DataInputStream data = new DataInputStream(file);
 
-            data.readLine();
-            while (data.available() != 0) {
-                String line = data.readLine();
-                String code = line.split(";")[0];
+			data.readLine();
+			while (data.available() != 0) {
+				String line = data.readLine();
+				String code = line.split(";")[0];
 
-                assetsCodes.add(code);
-            }
-            data.close();
+				assetsCodes.add(code);
+			}
+			data.close();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return assetsCodes;
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return assetsCodes;
+	}
 }
