@@ -19,18 +19,21 @@ public class BrokerReceive extends Thread {
 
     @Override
     public void run() {
-
+    	//criando conexao com o servidor
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(host);
 
         try {
+        	//criando canal para realizar as tarefas
             Connection connection = factory.newConnection();
             Channel channel = connection.createChannel();
-
+            //declara ativamente uma troca não autodelete sem argumentos extras
             channel.exchangeDeclare("BOLSADEVALORES", BuiltinExchangeType.TOPIC);
+            //declarando fila para consumo
             String queueName = channel.queueDeclare().getQueue();
             channel.queueBind(queueName, "BOLSADEVALORES", topic);
 
+            //utilizando a interface para armazenar em buffer as mensagens enviadas
             DeliverCallback deliveryCallback = (consumerTag, delivery) -> {
                 String message = new String(delivery.getBody(), "UTF-8");
                 String topic = delivery.getEnvelope().getRoutingKey();
@@ -52,11 +55,12 @@ public class BrokerReceive extends Thread {
                 JLabel messageL = new JLabel(messageFormat);
                 messageL.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
+                //mostrar mensagem na interface
                 BrokerGUI.actionsP.add(messageL);
                 BrokerGUI.actionsP.revalidate();
                 BrokerGUI.actionsP.repaint();
             };
-
+            //inicializando um consumidor nao local e nao exclusivo
             channel.basicConsume(queueName, true, deliveryCallback, consumerTag -> { });
 
         } catch (Exception e) {

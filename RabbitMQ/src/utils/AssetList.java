@@ -6,6 +6,7 @@ import java.util.Vector;
 
 public class AssetList {
 
+	//realiza leitura do arquivo de acoes da bovespa
     @SuppressWarnings("deprecation")
     public static Vector<String> load() {
 

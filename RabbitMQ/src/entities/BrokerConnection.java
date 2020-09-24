@@ -19,16 +19,17 @@ public class BrokerConnection extends Thread {
 
     @Override
     public void run() {
-
+    	//criando conexao com o servidor
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(host);
 
         try {
-            Connection connection = factory.newConnection();
+        	//criando canal para realizar as tarefas
+        	Connection connection = factory.newConnection();
             Channel channel = connection.createChannel();
-
+            //declara ativamente uma troca não autodelete sem argumentos extras
             channel.exchangeDeclare("BROKER", BuiltinExchangeType.TOPIC);
-
+            //publicar uma mensagem na fila
             channel.basicPublish("BROKER", topic, null, message.getBytes("UTF-8"));
 
         } catch (Exception e) {

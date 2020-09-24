@@ -35,6 +35,7 @@ public class OfferBook {
         matchOffers(host, splitAsset[0], offerId);
     }
 
+    //oferta e venda
     private synchronized static void matchOffers(String host, String type, int offerId) {
 
         if (type.equals("compra")) {

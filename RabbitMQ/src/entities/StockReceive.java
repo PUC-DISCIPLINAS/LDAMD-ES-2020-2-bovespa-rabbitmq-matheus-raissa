@@ -21,15 +21,17 @@ public class StockReceive extends Thread {
 
     @Override
     public void run() {
-
+    	//criando conexao com o servidor
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(host);
 
         try {
+        	//criando canal para realizar as tarefas
             Connection connection = factory.newConnection();
             Channel channel = connection.createChannel();
-
+            //declara ativamente uma troca não autodelete sem argumentos extras
             channel.exchangeDeclare("BROKER", BuiltinExchangeType.TOPIC);
+            //declarando fila para consumo
             String queueName = channel.queueDeclare().getQueue();
             channel.queueBind(queueName, "BROKER", "#");
 
@@ -37,10 +39,12 @@ public class StockReceive extends Thread {
             openMsgL.setFont(new Font("Serif", Font.BOLD, 12));
             openMsgL.setForeground(Color.MAGENTA);
             openMsgL.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+            //mostrando mensagens
             StockGUI.actionsP.add(openMsgL);
             StockGUI.actionsP.revalidate();
             StockGUI.actionsP.repaint();
 
+            //utilizando a interface para armazenar em buffer as mensagens enviadas
             DeliverCallback deliveryCallback = (consumerTag, delivery) -> {
                 String message = new String(delivery.getBody(), "UTF-8");
                 String topic = delivery.getEnvelope().getRoutingKey();
@@ -62,6 +66,7 @@ public class StockReceive extends Thread {
                 JLabel messageL = new JLabel(messageFormat);
                 messageL.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
+                //mostrar mensagem na interface
                 StockGUI.actionsP.add(messageL);
                 StockGUI.actionsP.revalidate();
                 StockGUI.actionsP.repaint();
@@ -71,7 +76,7 @@ public class StockReceive extends Thread {
 
                 OfferBook.store(host, topic, message);
             };
-
+            //inicializando um consumidor nao local e nao exclusivo
             channel.basicConsume(queueName, true, deliveryCallback, consumerTag -> { });
 
         } catch (Exception e) {
