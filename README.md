@@ -15,6 +15,36 @@ O projeto proposto a ser desenvolvido é um sistema para uma bolsa de valores, c
 
 ### ⌨️ Instruções para Execução 
 
+> Etapa 1 - Executar a bolsa de valores
+
+* Dê dois cliques no arquivo "StockExchange.jar";
+* Digite o endereço do servidor ou mantenha como "localhost";
+* Clique em "Abrir Negociações";
+
+> Etapa 2 - Executar uma corretora 
+
+* Dê dois cliques no arquivo "Brocker.jar";
+* Digite o nome do Broker ou mantenha como 'BKR1';
+* Selecione uma ação da bovespa no combobox ou mantenha na primeira opção;
+* Digite a quantidade de lotes a serem negociados para esta ação;
+* Digite o preço de cada lote a ser negociado para esta ação;
+* Clique no botão 'Comprar' para abrir uma oferta de compra ou clique no botão 'Vender' para abrir uma oferta de venda desta ação; 
+
+> Etapa 3 - Acompanhar ações 
+
+* Clique no botão 'Abrir Visualizador';
+* Digite o endereço do servidor ou mantenha como 'localhost';
+* Selecione uma ação da bovespa no combobox ou mantenha na primeira opção;
+* Clique no botão 'Acompanhar' para ver todas as negociações;
+
+> Etapa 4 - Encaminhar mensagens 
+
+* O envio de mensagens acontece automaticamente quando a bolsa de valores recebe qualquer mensagem;
+
+> Etapa 5 - Realizar transação 
+
+* Assim como a etapa 4, a etapa 5 também acontece automaticamente quando  uma nova oferta é publicada no livro de ofertas;
+
 ### ⚙️ Estrutura do Sistema
 
 ### Classes 
