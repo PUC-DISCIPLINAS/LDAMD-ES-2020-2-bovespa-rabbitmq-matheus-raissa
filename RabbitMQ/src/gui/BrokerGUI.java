@@ -43,7 +43,7 @@ public class BrokerGUI {
         JComboBox<String> assetsCB = new JComboBox<String>(assets);
         JLabel qtdeL = new JLabel("Quantidade:");
         JTextField qtdeTF = new JTextField();
-        JLabel priceL = new JLabel("Preço:");
+        JLabel priceL = new JLabel("Preco:");
         JTextField priceTF = new JTextField();
         JButton buyBtn = new JButton("Comprar");
         JButton saleBtn = new JButton("Vender");
@@ -51,7 +51,7 @@ public class BrokerGUI {
         groupBtn.setLayout(new GridLayout(1, 2, 5, 5));
         groupBtn.add(buyBtn);
         groupBtn.add(saleBtn);
-        JButton viewBtn = new JButton("Abrir Visualizador");
+//        JButton viewBtn = new JButton("Abrir Visualizador");
         centerP.add(alert);
         centerP.add(serverL);
         centerP.add(serverTF);
@@ -64,7 +64,7 @@ public class BrokerGUI {
         centerP.add(priceL);
         centerP.add(priceTF);
         centerP.add(groupBtn);
-        centerP.add(viewBtn);
+//        centerP.add(viewBtn);
 
         frame.add(topP, BorderLayout.NORTH);
         frame.add(centerP, BorderLayout.CENTER);

@@ -34,7 +34,7 @@ public class StockGUI {
 
         JLabel serverL = new JLabel("Servidor:");
         JTextField serverTF = new JTextField("localhost");
-        JButton runBtn = new JButton("Abrir NegociaÃ§Ãµes");
+        JButton runBtn = new JButton("Abrir Negociações");
         actionsP.setLayout(new BoxLayout(actionsP, BoxLayout.Y_AXIS));
         JScrollPane scrollP = new JScrollPane(actionsP);
         scrollP.setPreferredSize(new Dimension(200, 425));
