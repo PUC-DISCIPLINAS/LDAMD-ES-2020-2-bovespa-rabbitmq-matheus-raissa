@@ -143,5 +143,5 @@ $ Transaction.store() - recebe duas ofertas e realiza a transação entre elas.
 - [Erlang](https://www.erlang.org/downloads)
 
 <h4 align="center"> 
-	🚧 Corretora de Valores 🚀 em desenvolvimento... 🚧
+	🚧 Corretora de Valores 🚀 finalizada... 🚧
 </h4>
