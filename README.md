@@ -20,30 +20,53 @@ O projeto proposto a ser desenvolvido é um sistema para uma bolsa de valores, c
 ### Classes 
 
 > Entities  
-
+```
 * BrokerConnection - é uma thread que realiza as publicações no canal "BROKER".
 * BrokerReceive - é uma thread que recebe as informações do canal "BOLSADEVALORES" baseado em um determinado tópico.
 * StockConnection - é uma thread que realiza as publicações no canal "BOLSADEVALORES".
 * StockReceive - é uma thread que recebe as informações do canal "BROKER" baseado em um determinado tópico.
-
+```
 > GUI
+```
 * BrokerGUI - é uma interface que permite realizar novas negociações e acompanhar as negociações em andamento. 
 * StockGUI - é uma interface que permite iniciar e acompanhar as negociações em andamento. 
+```
 
 > Utils 
+```
 * AssetList - onde é realizado a leitura do arquivo que contém a lista de ações da Bovespa.
 * OfferBook - onde é armazenado as ofertas e as correspondências de compra e venda. 
 * Transaction - onde é realizado as transações da aplicação. 
+```
 
 ### Operações 
+```
+$ BrokerReceive.run() - gera um JLabel, insere um JPanel na interface para ser exibido em "BrokerGUI".
+```
 
-* BrokerReceive.run() - gera um JLabel, insere um JPanel na interface para ser exibido em "BrokerGUI".
-* StockReceive.run() - gera um JLabel, insere um JPanel na interface de "StockGUI" e emite uma mensagem para a "BOLSADEVALORES" armazená-la em OfferBook.
-* BrokerGUI.viewer() - gera e exibe o visualizador de negociações acompanhado pelo "BROKER".
-* AssetList.load() - realiza a leitura de um arquivo e retorna uma lista com os códigos de todos os ativos. 
-* OfferBook.store() - recebe uma oferta e armazena dentro da lista.
-* OfferBook.matchOffers() - recebe a última oferta salva e busca na lista uma oferta correspondente para realizar uma transação entre elas.
-* Transaction.store() - recebe duas ofertas e realiza a transação entre elas.
+```
+$ StockReceive.run() - gera um JLabel, insere um JPanel na interface de "StockGUI" e emite uma mensagem para a "BOLSADEVALORES" armazená-la em OfferBook.
+```
+
+```
+$ BrokerGUI.viewer() - gera e exibe o visualizador de negociações acompanhado pelo "BROKER".
+```
+
+```
+$ AssetList.load() - realiza a leitura de um arquivo e retorna uma lista com os códigos de todos os ativos. 
+```
+
+```
+$ OfferBook.store() - recebe uma oferta e armazena dentro da lista.
+```
+
+```
+$ OfferBook.matchOffers() - recebe a última oferta salva e busca na lista uma oferta correspondente para realizar uma transação entre elas.
+```
+
+```
+$ Transaction.store() - recebe duas ofertas e realiza a transação entre elas.
+```
 
 ### 💡 Diagrama UML
 
