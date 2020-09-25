@@ -17,6 +17,24 @@ O projeto proposto a ser desenvolvido é um sistema para uma bolsa de valores, c
 
 ### ⚙️ Estrutura do Sistema
 
+### Classes 
+
+> Entities  
+
+* BrokerConnection - é uma thread que realiza as publicações no canal "BROKER".
+* BrokerReceive - é uma thread que recebe as informações do canal "BOLSADEVALORES" baseado em um determinado tópico.
+* StockConnection - é uma thread que realiza as publicações no canal "BOLSADEVALORES".
+* StockReceive - é uma thread que recebe as informações do canal "BROKER" baseado em um determinado tópico.
+
+> GUI
+* BrokerGUI - é uma interface que permite realizar novas negociações e acompanhar as negociações em andamento. 
+* StockGUI - é uma interface que permite iniciar e acompanhar as negociações em andamento. 
+
+> Utils 
+* AssetList - onde é realizado a leitura do arquivo que contém a lista de ações da Bovespa.
+* OfferBook - onde é armazenado as ofertas e as correspondências de compra e venda. 
+* Transaction - onde é realizado as transações da aplicação. 
+
 ### 💡 Diagrama UML
 
 > O diagrama de classes é fundamental, pois, através da sua representação conseguimos mapear de forma clara a estrutura do sistema.
