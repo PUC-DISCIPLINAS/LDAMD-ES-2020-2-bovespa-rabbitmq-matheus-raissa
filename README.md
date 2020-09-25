@@ -35,6 +35,16 @@ O projeto proposto a ser desenvolvido é um sistema para uma bolsa de valores, c
 * OfferBook - onde é armazenado as ofertas e as correspondências de compra e venda. 
 * Transaction - onde é realizado as transações da aplicação. 
 
+### Operações 
+
+* BrokerReceive.run() - gera um JLabel, insere um JPanel na interface para ser exibido em "BrokerGUI".
+* StockReceive.run() - gera um JLabel, insere um JPanel na interface de "StockGUI" e emite uma mensagem para a "BOLSADEVALORES" armazená-la em OfferBook.
+* BrokerGUI.viewer() - gera e exibe o visualizador de negociações acompanhado pelo "BROKER".
+* AssetList.load() - realiza a leitura de um arquivo e retorna uma lista com os códigos de todos os ativos. 
+* OfferBook.store() - recebe uma oferta e armazena dentro da lista.
+* OfferBook.matchOffers() - recebe a última oferta salva e busca na lista uma oferta correspondente para realizar uma transação entre elas.
+* Transaction.store() - recebe duas ofertas e realiza a transação entre elas.
+
 ### 💡 Diagrama UML
 
 > O diagrama de classes é fundamental, pois, através da sua representação conseguimos mapear de forma clara a estrutura do sistema.
